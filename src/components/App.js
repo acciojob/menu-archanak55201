@@ -79,22 +79,41 @@ const data = [
 
 const App=()=>{
         const [food,setFood] = useState();
+        const [breakfast,setBreakfast] = useState();
+        const [lunch,setLunch] = useState();
+        const [shakes,setShakes] = useState();
 
             function getAllItem(e){     
                 const breackfast= data.filter(food=>food);
-                setFood(breackfast);     
+                setFood(breackfast);   
+                setBreakfast("")  ;
+                setLunch("");
+                setShakes("");
+                
             }
                 function getFoodItem(e){     
                     const breackfast= data.filter(food=>food.category==='breakfast');
-                    setFood(breackfast);     
+                    setBreakfast(breackfast);  
+                    
+                setLunch("");
+                setShakes("");
+                setFood("");   
             }
             function getLunchItem(e){     
                 const breackfast= data.filter(food=>food.category==='lunch');
-                setFood(breackfast);     
+                setLunch(breackfast);   
+                setBreakfast("")  ;
+               
+                setShakes("");
+                setFood("");  
         }
             function getShakeItem(e){     
                 const breackfast= data.filter(food=>food.category==='shakes');
-                setFood(breackfast);     
+                setShakes(breackfast);
+                setBreakfast("")  ;
+                setLunch("");
+               
+                setFood("");     
             }
         console.log(food);
     return (
@@ -102,9 +121,9 @@ const App=()=>{
             <h1>Our Menu</h1>
             <ul>
                 <li><button id="main" onClick={getAllItem}>All</button></li>
-                <li data-test-id="menu-item-breakfast" ><button id="filter-btn-1" onClick={getFoodItem}>Breakfast</button></li>
-                <li  data-test-id="menu-item-lunch"><button  id="filter-btn-2" onClick={getLunchItem}>Lunch</button></li>
-                <li data-test-id="menu-item-shakes"><button  id="filter-btn-3" onClick={getShakeItem}>Shakes</button></li>
+                <li  ><button id="filter-btn-1" onClick={getFoodItem}>Breakfast</button></li>
+                <li ><button  id="filter-btn-2" onClick={getLunchItem}>Lunch</button></li>
+                <li ><button  id="filter-btn-3" onClick={getShakeItem}>Shakes</button></li>
 
             </ul>
             <div className="food-items">
@@ -124,8 +143,64 @@ const App=()=>{
                     </div>
                    ))
                 )
-             }  
+             }
+            <div data-test-id="menu-item-breakfast">
+              {
+                breakfast && (
+                   breakfast.map((breakfast)=>(
+                    <div className="fooditem">
+                    <img src={breakfast.img} alt="bbb"/>
+                    <div>
+                        <div>
+                            <span>{breakfast.title}</span>
+                            <span>{breakfast.price}</span>
+                        </div>
+                        <p>{breakfast.desc}</p>
+                    </div>
+                    </div>
+                   ))
+                 
+                )
+             }  </div> 
 
+            <div  data-test-id="menu-item-lunch">
+              {
+                lunch && (
+                   lunch.map((lunch)=>(
+                    <div className="fooditem">
+                    <img src={lunch.img} alt="bbb"/>
+                    <div>
+                        <div>
+                            <span>{lunch.title}</span>
+                            <span>{lunch.price}</span>
+                        </div>
+                        <p>{lunch.desc}</p>
+                    </div>
+                    </div>
+                   ))
+                 
+                )
+             }  </div> 
+
+
+            <div data-test-id="menu-item-shakes">
+              {
+                shakes && (
+                   shakes.map((shakes)=>(
+                    <div className="fooditem">
+                    <img src={shakes.img} alt="bbb"/>
+                    <div>
+                        <div>
+                            <span>{shakes.title}</span>
+                            <span>{shakes.price}</span>
+                        </div>
+                        <p>{shakes.desc}</p>
+                    </div>
+                    </div>
+                   ))
+                 
+                )
+             }  </div> 
                
             </div>
         </div>
