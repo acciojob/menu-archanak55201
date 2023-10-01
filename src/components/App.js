@@ -79,41 +79,22 @@ const data = [
 
 const App=()=>{
         const [food,setFood] = useState();
-        const [breakfast,setBreakfast] = useState();
-        const [lunch,setLunch] = useState();
-        const [shakes,setShakes] = useState();
 
             function getAllItem(e){     
                 const breackfast= data.filter(food=>food);
-                setFood(breackfast);   
-                setBreakfast("")  ;
-                setLunch("");
-                setShakes("");
-                
+                setFood(breackfast);     
             }
                 function getFoodItem(e){     
                     const breackfast= data.filter(food=>food.category==='breakfast');
-                    setBreakfast(breackfast);  
-                    
-                setLunch("");
-                setShakes("");
-                setFood("");   
+                    setFood(breackfast);     
             }
             function getLunchItem(e){     
                 const breackfast= data.filter(food=>food.category==='lunch');
-                setLunch(breackfast);   
-                setBreakfast("")  ;
-               
-                setShakes("");
-                setFood("");  
+                setFood(breackfast);     
         }
             function getShakeItem(e){     
                 const breackfast= data.filter(food=>food.category==='shakes');
-                setShakes(breackfast);
-                setBreakfast("")  ;
-                setLunch("");
-               
-                setFood("");     
+                setFood(breackfast);     
             }
         console.log(food);
     return (
@@ -143,64 +124,8 @@ const App=()=>{
                     </div>
                    ))
                 )
-             }
-            <div data-test-id="menu-item-breakfast">
-              {
-                breakfast && (
-                   breakfast.map((breakfast)=>(
-                    <div className="fooditem">
-                    <img src={breakfast.img} alt="bbb"/>
-                    <div>
-                        <div>
-                            <span>{breakfast.title}</span>
-                            <span>{breakfast.price}</span>
-                        </div>
-                        <p>{breakfast.desc}</p>
-                    </div>
-                    </div>
-                   ))
-                 
-                )
-             }  </div> 
+             }  
 
-            <div  data-test-id="menu-item-lunch">
-              {
-                lunch && (
-                   lunch.map((lunch)=>(
-                    <div className="fooditem">
-                    <img src={lunch.img} alt="bbb"/>
-                    <div>
-                        <div>
-                            <span>{lunch.title}</span>
-                            <span>{lunch.price}</span>
-                        </div>
-                        <p>{lunch.desc}</p>
-                    </div>
-                    </div>
-                   ))
-                 
-                )
-             }  </div> 
-
-
-            <div data-test-id="menu-item-shakes">
-              {
-                shakes && (
-                   shakes.map((shakes)=>(
-                    <div className="fooditem">
-                    <img src={shakes.img} alt="bbb"/>
-                    <div>
-                        <div>
-                            <span>{shakes.title}</span>
-                            <span>{shakes.price}</span>
-                        </div>
-                        <p>{shakes.desc}</p>
-                    </div>
-                    </div>
-                   ))
-                 
-                )
-             }  </div> 
                
             </div>
         </div>
@@ -208,3 +133,7 @@ const App=()=>{
 }
 
 export default App;
+
+{/* data-test-id="menu-item-breakfast"
+data-test-id="menu-item-lunch"
+data-test-id="menu-item-shakes" */}
