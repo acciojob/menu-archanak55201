@@ -102,9 +102,9 @@ const App=()=>{
             <h1>Our Menu</h1>
             <ul>
                 <li><button id="main" onClick={getAllItem}>All</button></li>
-                <li><button id="filter-btn-1" onClick={getFoodItem}>Breakfast</button></li>
-                <li><button  id="filter-btn-2" onClick={getLunchItem}>Lunch</button></li>
-                <li><button id="filter-btn-3" onClick={getShakeItem}>Shakes</button></li>
+                <li><button data-test-id="menu-item-breakfast" onClick={getFoodItem}>Breakfast</button></li>
+                <li><button  data-test-id="menu-item-lunch" onClick={getLunchItem}>Lunch</button></li>
+                <li><button data-test-id="menu-item-shakes" onClick={getShakeItem}>Shakes</button></li>
                
             </ul>
             <div className="food-items">
