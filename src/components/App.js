@@ -101,10 +101,10 @@ const App=()=>{
         <div>
             <h1>Our Menu</h1>
             <ul>
-                <li><button onClick={getAllItem}>All</button></li>
-                <li><button onClick={getFoodItem}>Breakfast</button></li>
-                <li><button onClick={getLunchItem}>Lunch</button></li>
-                <li><button onClick={getShakeItem}>Shakes</button></li>
+                <li><button id="main" onClick={getAllItem}>All</button></li>
+                <li><button id="filter-btn-1" onClick={getFoodItem}>Breakfast</button></li>
+                <li><button  id="filter-btn-2" onClick={getLunchItem}>Lunch</button></li>
+                <li><button id="filter-btn-3" onClick={getShakeItem}>Shakes</button></li>
                
             </ul>
             <div className="food-items">
